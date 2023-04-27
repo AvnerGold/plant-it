@@ -16,7 +16,7 @@ export default function App() {
      <Stack.Navigator>
        {/* <Stack.Screen name="ShowItems" component={ShowItems}
         options={{title: 'All Items List'}} />
-       <Stack.Screen name="ShowCards" component={ShowCard} /> */}
+       <Stack.Screen name="ShowCards" component={ShowCard} /> bob*/} 
      </Stack.Navigator>
     </NavigationContainer>
   );
