@@ -1,9 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
-import { DateRange } from '@mui/icons-material';
+// import { DateRange } from '@mui/icons-material';
 import{ NavigationContainer } from '@react-navigation/native';
 import{ createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import{ createStackNavigator } from '@react-navigation/stack'
+import First from './src/Screens/StartedScreen/First';
+import Second from './src/Screens/StartedScreen/Second';
+import Third from './src/Screens/StartedScreen/Third';
 
 
 export default function App() {
@@ -13,9 +16,10 @@ export default function App() {
   return (
     <NavigationContainer>
      <Stack.Navigator>
-       {/* <Stack.Screen name="ShowItems" component={ShowItems}
-        options={{title: 'All Items List'}} />
-       <Stack.Screen name="ShowCards" component={ShowCard} /> bob*/} 
+        <Stack.Screen name="First" component={First}/>
+        <Stack.Screen name="Second" component={Second}/>
+        <Stack.Screen name="Third" component={Third}/>
+      
      </Stack.Navigator>
     </NavigationContainer>
   );
