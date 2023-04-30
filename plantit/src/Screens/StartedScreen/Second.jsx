@@ -23,23 +23,23 @@ export default function Second() {
             resizeMode="contain"/>
 
             <View style={styles.bubbleBoxOne}>
-
-                <Text style={[{fontFamily:'Abel'},styles.bubbleOneText]}>Do you sometimes forget to <br /> water your plants ?</Text>
-                <Image
-                source={require('../../../assets/images/StartedScreenImages/Second-1.png')}
-                style={[styles.bubbleOne]}
-                resizeMode="contain"/>
+                <Text style={[{marginRight:-10},styles.bubbleText]}>Do you sometimes forget to <br /> water your plants ?</Text>
+                <View style={styles.bubbleBorderA}>
+                    <Image
+                    source={require('../../../assets/images/StartedScreenImages/Second-1.png')}
+                    style={[styles.bubbleOneImage]}
+                    resizeMode="contain"/>
+                </View>
             </View>
 
             <View style={styles.bubbleBoxOTwo}>
-            <View style={styles.bubble}>
-                <Image
-                source={require('../../../assets/images/StartedScreenImages/Second-2.png')}
-                style={[styles.bubbleTwo]}
-                resizeMode="contain"/>
-
-            </View>
-                <Text style={[{fontFamily:'Abel'},styles.bubbleOneText]}>Do you know how much <br /> water your plant needs?</Text>
+                <View style={styles.bubbleBorderB}>
+                    <Image
+                    source={require('../../../assets/images/StartedScreenImages/Second-2.png')}
+                    style={[styles.bubbleTwoImage]}
+                    resizeMode="contain"/>
+                </View>
+                <Text style={[styles.bubbleText]}>Do you know how much <br /> water your plant needs?</Text>
             </View>
         </View>
     </View>
@@ -47,67 +47,79 @@ export default function Second() {
 }
 
 const styles = StyleSheet.create({
-    backgroundPage:{
+    backgroundPage:{// will make a color of all the page correct
         backgroundColor:'#F0F0F0',
-        color:"red",
         width: '100%',
         height: '100%',
-
     },
-    logo: {
+    logo: {// just the logo on top
         width: 25,
         height: 33,
         marginHorizontal:"auto"
     
     },
-    bubble: {
+    bubbleBorderA: { //this is the bubble colors behind the images 
+        backgroundColor:"#FBDBBE",
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: 10,
+        marginTop: 50,
+    },
+    bubbleBorderB: {  //this is the bubble colors behind the images (not the same so i need to tweak for the second bubble)
         marginLeft:10,
         width: 80,
         height: 80,
         borderRadius: 40,
-        backgroundColor: '#fff',
+        backgroundColor: '#EBBEFB',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
-        borderColor: '#000',
         marginRight: 10,
         marginTop: 50,
     },
-    bubbleBoxOne:{
+    bubbleBoxOne:{// this is the container of all the box one
         flex:1,
         flexDirection:"row",
         justifyContent:"flex-end",
         height:100,
         paddingBottom:30,    
     },
-    bubbleOne:{
-       marginTop:-37,
-       width:60,
-       height:173,
-       marginLeft:15
-    },
-    bubbleOneText: {
-        backgroundColor: '#fff',
-        borderRadius: 20,
-        padding: 10,
-        width: 175,
-        height:60,
-        marginTop: 68,
-        borderWidth: 1,
-        borderColor: '#000',
-        textAlign:"center"
-    },
-    bubbleBoxOTwo:{
+    bubbleBoxOTwo:{// this is the container of all the box two
         flex:1,
         flexDirection:"row",
         justifyContent:"flex-start",
         height:100    
     },
-    bubbleTwo:{
+    bubbleOneImage:{
+       marginTop:-37,
+       width:60,
+       height:173,
+      
+    
+    },
+    bubbleTwoImage:{
         marginTop:-45,
         width:85,
         height:190,
         marginLeft:-5,
      },
+    bubbleText: {
+        fontFamily:'Abel',
+        backgroundColor: '#D9D9D9',
+        borderRadius: 20,
+        padding: 10,
+        width: 175,
+        height:50,
+        marginTop: 68,
+        textAlign:"center",
+        shadowOffset: { width: 0, height: 2 },
+        shadowColor: '#000',
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        marginLeft: -15
+    },
 
 });
