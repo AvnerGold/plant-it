@@ -23,7 +23,7 @@ export default function Second() {
             resizeMode="contain"/>
 
             <View style={styles.bubbleBoxOne}>
-                <Text style={[{marginRight:-10},styles.bubbleText]}>Do hi sometimes forget to <br /> water your plants ?</Text>
+                <Text style={[{marginRight:-10},styles.bubbleText]}>Do you sometimes forget to  water your plants ?</Text>
                 <View style={styles.bubbleBorderA}>
                     <Image
                     source={require('../../../assets/images/StartedScreenImages/Second-1.png')}
@@ -39,7 +39,7 @@ export default function Second() {
                     style={[styles.bubbleTwoImage]}
                     resizeMode="contain"/>
                 </View>
-                <Text style={[styles.bubbleText]}>Do you know how much <br /> water your plant needs?</Text>
+                <Text style={[styles.bubbleText]}>Do you know how much water your plant needs?</Text>
             </View>
         </View>
     </View>

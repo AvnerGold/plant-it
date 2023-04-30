@@ -7,6 +7,8 @@ import{ createStackNavigator } from '@react-navigation/stack'
 import First from './src/Screens/StartedScreen/First';
 import Second from './src/Screens/StartedScreen/Second';
 import Third from './src/Screens/StartedScreen/Third';
+import Login from './src/Screens/StackScreens/Login';
+import Register from './src/Screens/StackScreens/Register';
 
 
 export default function App() {
@@ -16,10 +18,10 @@ export default function App() {
   return (
     <NavigationContainer>
      <Stack.Navigator>
-        <Stack.Screen name="First" component={First}/>
+        <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Second" component={Second}/>
         <Stack.Screen name="Third" component={Third}/>
-      
+        <Stack.Screen name="Register" component={Register}/>
      </Stack.Navigator>
     </NavigationContainer>
   );
