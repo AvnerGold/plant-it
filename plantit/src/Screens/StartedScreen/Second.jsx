@@ -22,7 +22,7 @@ export default function Second() {
             </View>
 
             <View style={styles.bubbleBoxOne}>
-                <Text style={[styles.Font,{marginRight:-10},styles.bubbleText]}>Do you sometimes forget to water your plants?</Text>
+                <Text style={[{marginRight:-10},styles.bubbleText]}>Do you sometimes forget to water your plants?</Text>
                 <View style={styles.bubbleBorderA}>
                     <Image
                     source={require('../../../assets/images/StartedScreenImages/Second-1.png')}
@@ -44,7 +44,6 @@ export default function Second() {
             <View  style={[styles.dot]}>
             <Image
                     source={require('../../../assets/images/StartedScreenImages/Dot-1.png')}
-                    style={styles}
                     resizeMode="contain"/>
             </View>
 
@@ -116,6 +115,7 @@ const styles = StyleSheet.create({
         marginLeft:-5,
      },
     bubbleText: {
+        fontFamily:'Abel',
         backgroundColor: '#D9D9D9',
         borderRadius: 20,
         padding: 15,

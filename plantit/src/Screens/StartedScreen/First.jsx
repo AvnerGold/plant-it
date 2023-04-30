@@ -1,7 +1,8 @@
-import { View, Text,StyleSheet,Image } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import React,{useEffect,useCallback} from 'react'
+import React, { useEffect, useCallback } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -12,51 +13,78 @@ import React,{useEffect,useCallback} from 'react'
 //})
 
 export default function First() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-  // Define a callback function that will navigate to the next screen
-  const navigateToNextScreen = useCallback(() => {
-    navigation.navigate('Second');
-  }, [navigation]);
+  async function checkFirstTime() {
+    // await AsyncStorage.removeItem('firstTime');
+    const isFirstTime = await AsyncStorage.getItem('firstTime');
+    console.log(isFirstTime);
+    let t = 1;
+    setTimeout(async() => {
+      if (isFirstTime == null) {
+        await AsyncStorage.setItem('firstTime', 'false');
+        navigation.navigate('Second');
+      }
+      else {
+        navigation.navigate('Login');
+        // await AsyncStorage.removeItem('firstTime');
+      }
+    }, 1000 * t);
+
+
+
+    // if (!isFirstTime) {
+    //   console.log("no");
+    //   const timeout = setTimeout(() => {
+    //     navigation.navigate('Login');
+    //   }, 1000);
+    //   return () => clearTimeout(timeout);
+    // } else {
+    //   console.log("yes");
+    //   await AsyncStorage.setItem('firstTime', 'true');
+    //   const timeout = setTimeout(async () => {
+    //     navigation.navigate('Second');
+    //   }, 1000);
+    //   return () => clearTimeout(timeout);
+    // }
+  }
+
 
   useEffect(() => {
-    // Set a timeout to navigate to the next screen after 5 seconds
-    const timeout = setTimeout(navigateToNextScreen, 1000);
 
-    // Clear the timeout when the component unmounts
-    return () => clearTimeout(timeout);
-  }, [navigateToNextScreen]);
+    checkFirstTime();
+  }, []);
 
-  
-    // get the correct fun for it
-    const [InknutAntiqua] = useFonts({
-        'InknutAntiqua-Black': require('../../../assets/Fonts/InknutAntiqua/InknutAntiqua-Black.ttf')
-      })
-    // if the font is null return null so it wont get the load to get stuck  
-      if (!InknutAntiqua) {
-      
-        return null;
-      }
-      // Return your page content here
+  // const navigateToNextScreen = useCallback(() => {
+  //   navigation.navigate('Login');
+  // }, [navigation]);
+
+  const [InknutAntiqua] = useFonts({
+    'InknutAntiqua-Black': require('../../../assets/Fonts/InknutAntiqua/InknutAntiqua-Black.ttf')
+  });
+
+  if (!InknutAntiqua) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-        <Image
-         source={require('../../../assets/images/Logo.png')}
-         style={{ width: 200, height: 200 }}
-         resizeMode="contain"
-         onLoad={() => console.log('Image loaded successfully!')}
-         />
-      <Text style={{fontFamily:'InknutAntiqua-Black'}}>Plant It</Text>
+      <Image
+        source={require('../../../assets/images/Logo.png')}
+        style={{ width: 200, height: 200 }}
+        resizeMode="contain"
+        onLoad={() => console.log('Image loaded successfully!')}
+      />
+      <Text style={{ fontFamily: 'InknutAntiqua-Black' }}>Plant It</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor:'#E3FFD1'
-
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#E3FFD1'
+  },
 });
