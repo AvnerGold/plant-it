@@ -30,23 +30,6 @@ export default function First() {
         // await AsyncStorage.removeItem('firstTime');
       }
     }, 1000 * t);
-
-
-
-    // if (!isFirstTime) {
-    //   console.log("no");
-    //   const timeout = setTimeout(() => {
-    //     navigation.navigate('Login');
-    //   }, 1000);
-    //   return () => clearTimeout(timeout);
-    // } else {
-    //   console.log("yes");
-    //   await AsyncStorage.setItem('firstTime', 'true');
-    //   const timeout = setTimeout(async () => {
-    //     navigation.navigate('Second');
-    //   }, 1000);
-    //   return () => clearTimeout(timeout);
-    // }
   }
 
 
