@@ -1,7 +1,11 @@
 import { View, Image, StyleSheet, TextInput } from 'react-native';
+//import CachedIcon from '@mui/icons-material/Cached';
 import { Text, Button } from '@react-native-material/core'
 import React from 'react';
 import { useFonts } from 'expo-font';
+//import { DateRange } from '@mui/icons-material';
+
+
 
 
 export default function Login({navigation}) {
@@ -15,6 +19,8 @@ export default function Login({navigation}) {
   return (
     <>
       <View>
+    {/* <DateRange name="DateRange" size={35} color='black'/>  trying to add icon*/}
+     
         <Image
           source={require('../../../assets/images/LoginImages/LoginImg.png')}
           style={styles.img} />

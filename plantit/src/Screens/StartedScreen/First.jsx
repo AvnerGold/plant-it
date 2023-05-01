@@ -19,7 +19,7 @@ export default function First() {
     // await AsyncStorage.removeItem('firstTime');
     const isFirstTime = await AsyncStorage.getItem('firstTime');
     console.log(isFirstTime);
-    let t = 1;
+    let t = 4;
     setTimeout(async() => {
       if (isFirstTime == null) {
         await AsyncStorage.setItem('firstTime', 'false');
