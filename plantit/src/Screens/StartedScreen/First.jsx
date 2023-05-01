@@ -4,17 +4,8 @@ import { useFonts } from 'expo-font';
 import React, { useEffect, useCallback } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
-//npx expo install expo-font
-///import { useFonts } from 'expo-font';
-// const [InknutAntiqua] = useFonts({
-//    'InknutAntiqua-Black': require('../../../assets/Fonts/InknutAntiqua/InknutAntiqua-Black.ttf')
-//})
-
 export default function First() {
   const navigation = useNavigation();
-
   async function checkFirstTime() {
     // await AsyncStorage.removeItem('firstTime');
     const isFirstTime = await AsyncStorage.getItem('firstTime');
@@ -32,23 +23,15 @@ export default function First() {
     }, 1000 * t);
   }
 
-
   useEffect(() => {
-
     checkFirstTime();
   }, []);
-
-  // const navigateToNextScreen = useCallback(() => {
-  //   navigation.navigate('Login');
-  // }, [navigation]);
 
   const [InknutAntiqua] = useFonts({
     'InknutAntiqua-Black': require('../../../assets/Fonts/InknutAntiqua/InknutAntiqua-Black.ttf')
   });
 
-  if (!InknutAntiqua) {
-    return null;
-  }
+  if (!InknutAntiqua) {return null;}
 
   return (
     <View style={styles.container}>
