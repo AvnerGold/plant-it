@@ -1,14 +1,11 @@
-import { View, Image, StyleSheet, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 //import CachedIcon from '@mui/icons-material/Cached';
 import { Text, Button } from '@react-native-material/core'
 import React from 'react';
 import { useFonts } from 'expo-font';
-//import { DateRange } from '@mui/icons-material';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-
-
-
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const [loaded] = useFonts({
     pacifico: require('../../../assets/Fonts/Pacifico/Pacifico-Regular.ttf'),
   });
@@ -18,13 +15,12 @@ export default function Login({navigation}) {
   }
   return (
     <>
-      <View>
-    {/* <DateRange name="DateRange" size={35} color='black'/>  trying to add icon*/}
-     
-        <Image
-          source={require('../../../assets/images/LoginImages/LoginImg.png')}
-          style={styles.img} />
-      </View>
+      <TouchableOpacity style={styles.iconClose} onPress={()=>navigation.navigate('ClientNotRegister')}>
+        <Ionicons  name="close-circle" size={40} color="black" />
+      </TouchableOpacity>
+      <Image
+        source={require('../../../assets/images/LoginImages/LoginImg.png')}
+        style={styles.img} />
       <View>
         <Text style={styles.title}>Welcome Plants</Text>
         <Text style={styles.undertitle}>Login to account</Text>
@@ -65,11 +61,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: '#E1E5E2',
-    margin: 10,
+    marginTop: 30
   },
   btn:
   {
-    marginTop: 20,
+    marginTop: 70,
     height: 40,
     textAlign: 'center',
     width: '90%',
@@ -79,5 +75,11 @@ const styles = StyleSheet.create({
   },
   textSU: {
     marginTop: 20
+  },
+  iconClose: {
+    position: 'absolute',
+    top: '10%',
+    left: '7%',
+    zIndex: 1
   }
 });

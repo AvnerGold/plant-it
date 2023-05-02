@@ -2,7 +2,8 @@ import { View, StyleSheet, TextInput, Image } from 'react-native'
 import { Text, Button } from '@react-native-material/core'
 import React from 'react'
 
-export default function Register() {
+export default function Register({navigation}) {
+
   return (
     <>
       <View style={styles.top}>
@@ -20,7 +21,8 @@ export default function Register() {
         <Image
           source={require('../../../assets/images/RegisterImages/registerarosoir.png')}
           style={styles.img} />
-        <Button style={styles.btn} variant="contained" color="green" title="Sign Up"></Button>
+        <Button  style={styles.btn} variant="contained" color="green" title="Sign Up"></Button>
+        <Button variant='outlined' title="Already have an account ?" color='black' onPress={()=>navigation.navigate("Login")}>Already have an account ? </Button>
       </View>
     </>
   )
