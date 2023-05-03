@@ -1,37 +1,20 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import React, { useEffect, useCallback } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useCallback, useContext } from 'react'
+import { ContextUser } from '../../Context/ContextUser';
 
-export default function First() {
-  const navigation = useNavigation();
-  async function checkFirstTime() {
-    // await AsyncStorage.removeItem('firstTime');
-    const isFirstTime = await AsyncStorage.getItem('firstTime');
-    console.log(isFirstTime);
-    let t = 4;
-    setTimeout(async() => {
-      if (isFirstTime == null) {
-        await AsyncStorage.setItem('firstTime', 'false');
-        navigation.navigate('Second');
-      }
-      else {
-        navigation.navigate('Login');
-        // await AsyncStorage.removeItem('firstTime');
-      }
-    }, 1000 * t);
-  }
-
+export default function First({navigation}) {
+  
+  const { checkFirstTime } = useContext(ContextUser)
   useEffect(() => {
-    checkFirstTime();
+    checkFirstTime(navigation);
   }, []);
 
   const [InknutAntiqua] = useFonts({
     'InknutAntiqua-Black': require('../../../assets/Fonts/InknutAntiqua/InknutAntiqua-Black.ttf')
   });
 
-  if (!InknutAntiqua) {return null;}
+  if (!InknutAntiqua) { return null; }
 
   return (
     <View style={styles.container}>

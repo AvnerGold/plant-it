@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
-// import { DateRange } from '@mui/icons-material';
 import{ NavigationContainer } from '@react-navigation/native';
 import{ createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import{ createStackNavigator } from '@react-navigation/stack'
@@ -19,7 +18,6 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function App() {
   const Stack = createStackNavigator();
-
   return (
     <ContextUserProvider>
     <NavigationContainer>
@@ -36,6 +34,7 @@ export default function App() {
   );
 }
 
+
 // CLIENT 
 export const ClientNotRegister = () => {
   const Tab = createBottomTabNavigator();
@@ -43,7 +42,6 @@ export const ClientNotRegister = () => {
       <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-
           if (route.name === 'MyGarden'){
             iconName = focused
               ? 'ios-flower'
@@ -57,8 +55,6 @@ export const ClientNotRegister = () => {
           } else if (route.name === 'Search'){
           iconName = focused ? 'ios-search-circle-sharp' : 'ios-search';
         }
-          
-
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -70,7 +66,6 @@ export const ClientNotRegister = () => {
         <Tab.Screen name="Search" component={Search} />
         <Tab.Screen name="Reminder" component={Reminder} />
         <Tab.Screen name="MyGarden" component={MyGarden} />
-
       </Tab.Navigator>
   );
 };

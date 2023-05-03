@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   iconClose: {
     position: 'absolute',
-    top: '10%',
+    top: '5%',
     left: '7%',
     zIndex: 1
   }
