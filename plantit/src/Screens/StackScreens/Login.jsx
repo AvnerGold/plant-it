@@ -18,6 +18,9 @@ export default function Login({ navigation }) {
       <TouchableOpacity style={styles.iconClose} onPress={()=>navigation.navigate('ClientNotRegister')}>
         <Ionicons  name="close-circle" size={40} color="black" />
       </TouchableOpacity>
+      <TouchableOpacity style={styles.iconCloseRefresh} onPress={()=>AsyncStorage.clear()}>
+        <Ionicons  name="close-circle" size={40} color="black" />
+      </TouchableOpacity>
       <Image
         source={require('../../../assets/images/LoginImages/LoginImg.png')}
         style={styles.img} />
@@ -80,6 +83,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '5%',
     left: '7%',
+    zIndex: 1
+  },
+  iconCloseRefresh: {
+    position: 'absolute',
+    top: '10%',
+    right: '7%',
     zIndex: 1
   }
 });
