@@ -4,6 +4,7 @@ import { Text, Button } from '@react-native-material/core'
 import React from 'react';
 import { useFonts } from 'expo-font';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login({ navigation }) {
   const [loaded] = useFonts({
