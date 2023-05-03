@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
+//import { View, Text } from 'react-native'
 import React, { createContext, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 export const ContextUser = createContext();
-import { useNavigation } from 'react-router-dom';
+
 const ContextUserProvider = ({ children,navigation }) => {
 
     // Garden Page data
@@ -28,7 +28,7 @@ const ContextUserProvider = ({ children,navigation }) => {
             }
             else {
                 navigation.navigate('Login');
-                // await AsyncStorage.removeItem('firstTime');
+                //navigation.navigate('Second'); just to test the first screens
             }
         }, 1000 * t);
     }

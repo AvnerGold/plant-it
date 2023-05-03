@@ -1,8 +1,8 @@
-import { View, Text,StyleSheet,Image } from 'react-native'
+import { View, Text,StyleSheet,Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useFonts } from 'expo-font';
 
-export default function Second() {
+export default function Second({navigation}) {
       // get the correct fun for it
       const [InknutAntiqua] = useFonts({
         'Abel': require('../../../assets/Fonts/Abel/Abel-Regular.ttf')
@@ -47,12 +47,17 @@ export default function Second() {
                     resizeMode="contain"/>
             </View>
 
+
             <View style={styles.next}>
                 <Text style={[styles.Font,styles.header]}>Hello !</Text>
                 <Text style={[styles.Font,styles.welcome]}>Welcome to Plant it</Text>
+                <TouchableOpacity style={{ justifyContent: 'center', alignItems:"center",}}>
+                    <Text style={[styles.Font,styles.buttonNext]} onPress={()=> navigation.navigate('Third')}>Next</Text>
+                </TouchableOpacity>
 
                 <Text style={{textAlign:"center"}}><Text style={{color:"#325A3E"}}>By signing you agree to our</Text> term of use{"\n"} and privacy notice</Text>
             </View>
+
             
         </View>
   )
@@ -68,6 +73,7 @@ const styles = StyleSheet.create({
         height: '100%',  
     },
     logo: {// just the logo on top
+        marginTop:25,
         width: 25,
         height: 33,
         marginHorizontal:"auto",
@@ -137,17 +143,37 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     next:{
-        marginTop: 30,
+        marginTop: 15,
+      
         alignItems:"center",
         justifyContent: 'center',
+        backgroundColor:"#FFFFFF",
+        borderRadius:1000000,
+        borderWidth:50,
+        borderBottomWidth:200,
+        borderColor:"#FFFFFF",
     },
     header:{
-        fontSize:30
+        paddingTop:25,
+        fontSize:30,
     },
     welcome:{
         color:"#848484",
         fontSize:24,
-        marginBottom:20
+        marginBottom:80
+    },
+    buttonNext:{
+        fontSize:30,
+        borderWidth:1,
+        borderRadius:100,
+        justifyContent: 'center',
+        padding:5,
+        color:"#FFFFFF",
+        width:270,
+        backgroundColor:"#325A3E",
+        textAlign: 'center',
+        marginBottom:10
     }
+    
 
 });
