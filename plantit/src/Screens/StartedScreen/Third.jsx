@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
       height: '100%',  
   },
   logo: {// just the logo on top
-      marginTop:25,
+      marginTop:5,
       width: 25,
       height: 33,
       marginHorizontal:"auto",
@@ -155,6 +155,7 @@ next:{
     backgroundColor:"#FFFFFF",
     borderWidth:20,
     borderColor:"#FFFFFF",
+    paddingBottom:30
 },
 header:{
     paddingTop:25,

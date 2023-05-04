@@ -67,10 +67,9 @@ const styles = StyleSheet.create({
         backgroundColor:'#F0F0F0',
         width: '100%',
         height: '100%',
-        paddingTop:40  
     },
     logo: {// just the logo on top
-        marginTop:45,
+        marginTop:32,
         width: 25,
         height: 33,
         marginHorizontal:"auto",
@@ -149,6 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#FFFFFF",
         borderWidth:20,
         borderColor:"#FFFFFF",
+        paddingBottom:55
     },
     header:{
         paddingTop:25,
