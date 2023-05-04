@@ -35,7 +35,7 @@ export default function Search() {
       </SafeAreaView>
       <Text>{inputSearch}</Text>
       </>
-  )
+  ) 
 }
 
 const styles = StyleSheet.create({
