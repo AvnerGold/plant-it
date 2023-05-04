@@ -138,11 +138,11 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         // marginTop: 30,
         position:'absolute',
-        top:'60%',
+        top:'58%',
         left:'45%'
     },
     next:{
-        marginTop: 125,
+        marginTop: 145,
         alignItems:"center",
         justifyContent: 'center',
         backgroundColor:"#FFFFFF",
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     welcome:{
         color:"#848484",
         fontSize:24,
-        marginBottom:80
+        marginBottom:30
     },
     buttonNext:{
         fontSize:30,

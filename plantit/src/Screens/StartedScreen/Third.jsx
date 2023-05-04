@@ -143,13 +143,13 @@ const styles = StyleSheet.create({
   dot:{
     // alignItems: 'center',
     // justifyContent: 'center',
-    // marginTop: 30,
+    
     position:'absolute',
-    top:'60%',
+    top:'55%',
     left:'45%'
 },
 next:{
-    marginTop: 125,
+    marginTop: 85,
     alignItems:"center",
     justifyContent: 'center',
     backgroundColor:"#FFFFFF",
@@ -166,7 +166,7 @@ header:{
       color:"#848484",
       textAlign:"center",
       fontSize:15,
-      marginBottom:55
+      marginBottom:30
   },
   buttonNext:{
       fontSize:30,
