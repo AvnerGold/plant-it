@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
       height: 33,
       marginHorizontal:"auto",
       alignItems: 'center', // Add this line
+      paddingTop:95
   },
   bubbleBorderA: { //this is the bubble colors behind the images 
       backgroundColor:"#FBDBBE",
@@ -140,25 +141,26 @@ const styles = StyleSheet.create({
       zIndex:1,
   },
   dot:{
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 30,
-  },
-  next:{
-      marginTop: 15,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // marginTop: 30,
+    position:'absolute',
+    top:'60%',
+    left:'45%'
+},
+next:{
+    marginTop: 125,
+    alignItems:"center",
+    justifyContent: 'center',
+    backgroundColor:"#FFFFFF",
+    borderWidth:20,
+    borderColor:"#FFFFFF",
+},
+header:{
+    paddingTop:25,
+    fontSize:30,
     
-      alignItems:"center",
-      justifyContent: 'center',
-      backgroundColor:"#FFFFFF",
-      borderRadius:1000000,
-      borderWidth:50,
-      borderBottomWidth:200,
-      borderColor:"#FFFFFF",
-  },
-  header:{
-      paddingTop:25,
-      fontSize:30,
-  },
+},
   welcome:{
       color:"#848484",
       textAlign:"center",

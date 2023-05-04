@@ -46,8 +46,6 @@ export default function Second({navigation}) {
                     source={require('../../../assets/images/StartedScreenImages/Dot-1.png')}
                     resizeMode="contain"/>
             </View>
-
-
             <View style={styles.next}>
                 <Text style={[styles.Font,styles.header]}>Hello !</Text>
                 <Text style={[styles.Font,styles.welcome]}>Welcome to Plant it</Text>
@@ -57,8 +55,6 @@ export default function Second({navigation}) {
 
                 <Text style={{textAlign:"center"}}><Text style={{color:"#325A3E"}}>By signing you agree to our</Text> term of use{"\n"} and privacy notice</Text>
             </View>
-
-            
         </View>
   )
 }
@@ -70,10 +66,11 @@ const styles = StyleSheet.create({
     backgroundPage:{// will make a color of all the page correct
         backgroundColor:'#F0F0F0',
         width: '100%',
-        height: '100%',  
+        height: '100%',
+        paddingTop:40  
     },
     logo: {// just the logo on top
-        marginTop:25,
+        marginTop:45,
         width: 25,
         height: 33,
         marginHorizontal:"auto",
@@ -138,24 +135,25 @@ const styles = StyleSheet.create({
         zIndex:1,
     },
     dot:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 30,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // marginTop: 30,
+        position:'absolute',
+        top:'60%',
+        left:'45%'
     },
     next:{
-        marginTop: 15,
-      
+        marginTop: 125,
         alignItems:"center",
         justifyContent: 'center',
         backgroundColor:"#FFFFFF",
-        borderRadius:1000000,
-        borderWidth:50,
-        borderBottomWidth:200,
+        borderWidth:20,
         borderColor:"#FFFFFF",
     },
     header:{
         paddingTop:25,
         fontSize:30,
+        
     },
     welcome:{
         color:"#848484",
